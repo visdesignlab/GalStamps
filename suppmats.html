@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<style>
+/* set the CSS */
+.line {
+  fill: none;
+  stroke: steelblue;
+  stroke-width: 2px;
+}
+
+.line_f {
+  fill: none;
+  stroke: steelblue;
+  stroke-width: 6px;
+}
+
+.lines{
+	stroke:steelblue;
+	stroke-width:1px;
+}
+
+.labels{
+	width:10px;
+	word-wrap: break-word;
+}
+
+.node {
+	fill:white;
+	stroke:steelblue;
+	stroke-width: 2px;
+}
+
+.ldivs{
+	background:white;
+}
+
+#form{
+	width:300px;
+	height:97%;
+	font-size:11px;
+	font-family:sans-serif;
+	float:left;
+	background:#F8F8F8;
+	margin:5px;
+	padding:5px;
+}
+.formdiv {
+	float:left;
+	margin-bottom:10px;
+}
+#header2{
+	font-size:14px;
+	font-family:sans-serif;
+	color:steelblue;
+	margin-top:5px;
+	margin-left:5px;
+}
+#vis {
+	float:left;
+	width:670px;
+	margin:5px;
+}
+#container {
+	width: 1000px;
+	height: 625px;
+	float:left;
+	border: 1px solid #ccc;
+}
+#filter{
+	float:left;
+	margin-bottom:5px;
+	background:#F8F8F8;
+}
+
+#timeline{
+	float:left;
+	background:#F8F8F8;
+}
+
+.lableLine{
+	stroke-width:1px;
+	stroke:steelblue;
+
+}
+#note{
+	float:left;
+	width:800px;
+	height:600px;
+	margin:5px;
+	word-wrap: break-word;
+}
+
+#note.text{
+	padding:10px;
+}
+
+.flheader{
+	background:#64acdd;
+	padding:2px;
+}
+.flnote {
+	width:600px;
+	height:800px;
+	padding:5px;
+}
+.flnote_div {
+	float:left;
+	position:absolute;
+	background:white;
+	width:750px;
+	height:800px;
+	padding:5px;
+	font-size:11px;
+	font-family:sans-serif;
+	color:black;
+}
+.dates:hover{
+	cursor:pointer;
+}
+
+.keywords:hover{
+	cursor:pointer;
+}
+
+.imgIcon{
+	padding:1px;
+	border:1px solid #021a40;
+	background-color:#ff0;
+}
+
+.imgIcon:hover{
+	cursor:pointer;
+}
+
+.imgIconRect{
+	stroke:steelblue;
+	stroke-width:0.5px;
+	fill:none;
+}
+
+div.tooltip {
+  position: absolute;
+  text-align: left;
+  width: 200px;
+  padding: 5px;
+  font: 10px sans-serif;
+  background: lightsteelblue;
+  border: 0px;
+  border-radius: 4px;
+  pointer-events: none;
+}
+
+
+.phases:hover {
+	stroke-width:1px;
+}
+
+
+</style>
+	<head>
+	    <!-- Meta, title, CSS, favicons, etc. -->
+	    <meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="">
+		<meta name="author" content="">
+	
+		<title>
+		  
+		    Framework for Externalizing Implicit Error Using Visualization
+		  
+		</title>
+	
+		<!-- Bootstrap core CSS -->
+		<link href="assets/css/bootstrap.min.css" rel="stylesheet">
+		
+		<!-- Fonts -->
+		<link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,700,400italic,700italic' rel='stylesheet' type='text/css'>
+		
+		<!-- Rocket extras -->
+		<link href="assets/css/animate.css" rel="stylesheet">
+		<link href="assets/css/prettyPhoto.css" rel="stylesheet">
+		<link href="assets/css/style.css" rel="stylesheet">
+		<!--[if lt IE 9]><script src="assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+		
+		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!--[if lt IE 9]>
+		  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		  <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+		<![endif]-->
+		
+		<!-- Favicons -->
+		<link rel="shortcut icon" href="../assets/favicon.png">
+	</head>	  
+	<script src="https://d3plus.org/js/d3plus-text.v0.9.full.min.js"></script>	  
+	<body>
+	<!-- Start Rocket -->
+	<!-- ********************* -->
+	
+	<!-- Parallax Background
+	================================================== -->
+	<!-- image is set in the CSS as a background image -->	<!-- End Parallax Background
+	================================================== -->
+	
+	<!-- Start Header
+	================================================== -->
+	<header id="header" class="navbar navbar-inverse navbar-fixed-top" role="banner">
+      <div class="container">
+	    <div class="navbar-header">
+	      <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+	        <span class="sr-only">Toggle navigation</span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	      </button>
+	      <!-- Your Logo -->
+ <a href="../" class="navbar-brand">GalStamps: Analyzing Real and Simulated Galaxy Observations<p style="font-size:12px;font-style:italic;">by Nina McCurdy and Miriah Meyer</p></a>
+		    </div>
+	    <!-- Start Navigation -->
+	    <nav class="collapse navbar-collapse bs-navbar-collapse navbar-right" role="navigation">
+	      <ul class="nav navbar-nav">
+	        <li>
+	          <a href="index.html">Overview</a>
+	        </li>
+	        <li>
+	          <a href="suppmats.html">Supplemental Materials</a>
+	        </li>
+            </ul>
+	   </nav>
+	  </div>
+	</header>
+	<!-- ==================================================
+	End Header -->
+     <section id="suppmat" class="section">
+		<div class="container">
+		 <p></p> 
+			
+			<h2>Video Demonstration</h2>
+			
+			
+			<iframe src="https://player.vimeo.com/video/350644776" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+			
+		  <!--<br/><a href="http://sci.utah.edu/~vdl/papers/2018_infovis_ie-framework_video_preview.mp4" download>Download video</a> -->
+
+<br><br><br>
+			<h2>Long Process Description</h2>
+			
+			<a href="files/Long_process_description.pdf">view PDF</a>
+
+	
+	</body>
+</html>
+
