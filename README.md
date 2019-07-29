@@ -1,2 +1,2 @@
-# IEFramework
-A Framework for Externalizing Implicit Error Using Visualization
+# GalStamps
+Analyzing Real and Simulated Galaxy Observations
